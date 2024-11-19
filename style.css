@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Убедитесь, что padding входит в общую ширину */
+
+  scrollbar-width: thin;
+  scrollbar-color: red hsl(0 0% 20%);
+
+}
+
+
+/*Скроллбар */
+/* Скрываем стандартные кнопки */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Настраиваем общий вид скроллбара */
+::-webkit-scrollbar {
+    width: 1vw; /* Ширина вертикального скроллбара */
+    height: 1vw; /* Высота горизонтального скроллбара */
+}
+
+/* Фон полосы прокрутки */
+::-webkit-scrollbar-track {
+    background: green; /* Прозрачный трек */
+}
+
+/* Сам ползунок */
+::-webkit-scrollbar-thumb {
+    background-color: red; /* Тонкая темная полоска */
+    border-radius: 0px; /* Скругление */
+}
+
+
+
+:root {
+
+
+  --scrolbar_html: 0px;
+  --main_menu_height: 7vh;
+  --main_menu_height_min: 35px;
+  --main_menu_height_shrink: 1vh;
+
+
+
+
+  --coub_height: 35vh;
+  --coub_height_min: 50px;
+
+
+
+  --transition_time_s: 2.0s;
+  --transition_time: .6s;
+  --real_transition: .3s;
+
+
+  --menu_height:calc(15px + 3vh);
+
+
+  --font-size: 4vh;
+  
+
+  --OrangeRed: #FF4500;
+  --Coral: #FF7F50;
+
+  --UnderlineColor: #FF4500ca;
+  --Deny: #Af0000;
+  --DenyHover:#FF0000;
+
+
+}
+
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: blue;
+  height: 5000px;  
+
+  
+}
+
+
+.slider-content{
+  height: 400px; 
+  background: var(--OrangeRed);
+  display:flex;
+  padding: 10px;
+  gap:10px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.coub{
+
+  background-color: var(--Coral);
+
+  height: var(--coub_height);
+  min-height: var(--coub_height_min);
+  width: var(--coub_height);
+
+}
+
+
+.logo{
+  position: relative;
+  display:none;
+  top: 100%;
+  background-color: yellowgreen;
+  height: var(--coub_height);
+  min-height: var(--coub_height_min);
+  width: var(--coub_height);
+}
+
+.coub:hover .logo{
+  display: block;
+}
+
+
+
+.slider{
+  overflow: hidden;
+  display: flex;
+  background: aquamarine;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  z-index:100;
+}
+
+
+.ScrolableX{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.nested{
+  position: relative;
+  display: flex;
+  gap: 10px;
+  transition: left var(--real_transition); ease-out;
+}
+
+
+.block{
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  background: lightcoral;
+}
+
+.pad-block{
+  width: 100%;
+  height: 100%;
+  background: greenyellow;
+}
